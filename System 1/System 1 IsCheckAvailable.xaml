@@ -1,0 +1,285 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="System_1_IsCheckAvailable" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_CheckLocation" Type="OutArgument(x:String)" />
+    <x:Property Name="in_ClientID" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_CheckNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_WIID" Type="InArgument(x:String)" />
+    <x:Property Name="out_UpdateWorkItemComment" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Status" Type="OutArgument(x:String)" />
+    <x:Property Name="in_Day" Type="InArgument(x:String)" />
+    <x:Property Name="in_Month" Type="InArgument(x:String)" />
+    <x:Property Name="in_Year" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>969.6,2229.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Pre Condition: Browser opened on Check Details&#xA;&#xA;Post Condtion: Check Uploaded" DisplayName="System 1 IsCheckAvailable" sap:VirtualizedContainerService.HintSize="929.6,2149.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser System1 IsCheckAvailable - Check Details" sap:VirtualizedContainerService.HintSize="907.2,1964.8" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="63d718223abc7c6a9047f84e6255bb29" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Checks - Check Details' /&gt;">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="892.8,1817.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="870.4,1592.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="CheckExists" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ImageFound DisplayName="Image - Check Scan" Found="[CheckExists]" sap:VirtualizedContainerService.HintSize="848,107.2" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                <ui:ImageFound.Image>
+                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+                </ui:ImageFound.Image>
+                <ui:ImageFound.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                </ui:ImageFound.Target>
+              </ui:ImageFound>
+              <If sap2010:Annotation.AnnotationText="If check exists inside System 1 then download the picture and upload it, if not check if there is check inside System 3. " Condition="[CheckExists]" sap:VirtualizedContainerService.HintSize="848,1320.8" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence DisplayName="Save Image" sap:VirtualizedContainerService.HintSize="336.8,1143.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="ui:Image" Name="Check" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Screenshot Check" sap:VirtualizedContainerService.HintSize="314.4,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[Check]">
+                      <ui:TakeScreenshot.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e7c3b51967552d2095a7fe12797cfa96" Selector="&lt;webctrl tag='IMG' /&gt;" WaitForReady="INTERACTIVE" />
+                      </ui:TakeScreenshot.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:TakeScreenshot>
+                    <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="314.4,22.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Directory.GetCurrentDirectory  + &quot;\Data\Checks\&quot;]" />
+                    <Assign DisplayName="Assign out_CheckLocation" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_CheckLocation]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">[Directory.GetCurrentDirectory  + "\Data\Checks\" + in_ClientID]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:SaveImage DisplayName="Save Image" FileName="[out_CheckLocation + &quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Check]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:SaveImage>
+                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[in_Config(&quot;Home&quot;).ToString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:NavigateTo>
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Searching for Check Copy" DisplayName="Invoke System 1 ClickSubmitCheckCopy workflow" sap:VirtualizedContainerService.HintSize="314.4,116" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="System 1\System 1 ClickSubmitCheckCopy.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Uploading Check " DisplayName="Invoke System 1 UploadCheck workflow" sap:VirtualizedContainerService.HintSize="314.4,116" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="System 1\System 1 UploadCheck.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_ClientID">[in_ClientID]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_CheckNumber">[in_CheckNumber]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_CheckLocation">[out_CheckLocation + ".png"]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_WIID">[in_WIID]</InArgument>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                    <Assign DisplayName="Assign System1 IsCheckAvailable out_Status " sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Status]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">Completed</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign DisplayName="Assign System1 IsCheckAvailable out_Status  Comment" sap:VirtualizedContainerService.HintSize="314.4,64" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_UpdateWorkItemComment]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String" xml:space="preserve">Check found in System 1,
+uploaded to client.</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="System 3 Check Search" sap:VirtualizedContainerService.HintSize="486.4,1127.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Search for ClientID" DisplayName="Invoke System 3 GoToSearchByClientID workflow" sap:VirtualizedContainerService.HintSize="464,116" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="System 3\System 3 GoToSearchByClientID.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                      </ui:InvokeWorkflowFile.Arguments>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System 3 SearchByClientID workflow" sap:VirtualizedContainerService.HintSize="464,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="System 3\System 3 SearchByClientID.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_ClientID">[in_ClientID]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_Status">[out_Status]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_Comment">[out_UpdateWorkItemComment]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Day">[in_Day]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Month">[in_Month]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Year">[in_Year]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_CheckNumber">[in_CheckNumber]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_CheckLocation">[out_CheckLocation]</OutArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System 3  MinimizeApplication workflow" sap:VirtualizedContainerService.HintSize="464,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="System 3\System 3  MinimizeApplication.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <If Condition="[out_Status.Equals(&quot;Completed&quot;)]" sap:VirtualizedContainerService.HintSize="464,590.4" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence DisplayName="Upload Check from System 3" sap:VirtualizedContainerService.HintSize="336.8,440.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="NavigateTo_4" Url="[in_Config(&quot;Home&quot;).ToString]" />
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System 1 ClickSubmitCheckCopy workflow" sap:VirtualizedContainerService.HintSize="314.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="System 1\System 1 ClickSubmitCheckCopy.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke System 1 UploadCheck workflow" sap:VirtualizedContainerService.HintSize="314.4,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="System 1\System 1 UploadCheck.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_ClientID">[in_ClientID]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_CheckNumber">[in_CheckNumber]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_CheckLocation">[out_CheckLocation]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_WIID">[in_WIID]</InArgument>
+                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                        </Sequence>
+                      </If.Then>
+                    </If>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="870.4,60" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[in_Config(&quot;WorkItems&quot;).ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+  </Sequence>
+</Activity>
