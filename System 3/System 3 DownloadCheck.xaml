@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>508.8,1040</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>476.8,1196.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -57,7 +57,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System 3 DownloadCheck" sap:VirtualizedContainerService.HintSize="468.8,960" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System 3 DownloadCheck" sap:VirtualizedContainerService.HintSize="436.8,1116.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="CheckPath" />
     </Sequence.Variables>
@@ -66,7 +66,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="430.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="414.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[CheckPath]</OutArgument>
       </Assign.To>
@@ -74,13 +74,13 @@
         <InArgument x:TypeArguments="x:String">[Directory.GetCurrentDirectory+"\Data\Checks\"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'ACME-System3.exe ACME'" sap:VirtualizedContainerService.HintSize="430.4,767.2" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="4795a26cf08623ccd7bce8d0d3ea60e6" Selector="&lt;wnd app='acme-system3.exe' ctrlname='CheckCopy' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'ACME-System3.exe ACME'" sap:VirtualizedContainerService.HintSize="414.4,892" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="4795a26cf08623ccd7bce8d0d3ea60e6" Selector="&lt;wnd app='acme-system3.exe' ctrlname='CheckCopy' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="368.8,580" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336.8,744.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:Image" Name="Check" />
             </Sequence.Variables>
@@ -89,13 +89,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'graphic  image1'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[Check]">
+            <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Take Screenshot 'graphic  image1'" sap:VirtualizedContainerService.HintSize="314.4,107.2" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[Check]">
               <ui:TakeScreenshot.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8fb37ceded9f9410cd820ea12d702736" Selector="&lt;wnd ctrlname='elementHost1' /&gt;&lt;wnd cls='HwndWrapper*' title='elementHost1' /&gt;&lt;ctrl name='elementHost1' role='pane' /&gt;&lt;ctrl automationid='image1' /&gt;" WaitForReady="INTERACTIVE" />
               </ui:TakeScreenshot.Target>
             </ui:TakeScreenshot>
-            <ui:SaveImage DisplayName="Save Image" FileName="[CheckPath + in_ClientID + &quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="330.4,92.8" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Check]" />
-            <Assign sap:VirtualizedContainerService.HintSize="330.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CheckPath + in_ClientID + &quot;.png&quot;]" />
+            <ui:SaveImage DisplayName="Save Image" FileName="[CheckPath + in_ClientID + &quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Check]" />
+            <Assign sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[out_CheckLocation]</OutArgument>
               </Assign.To>
@@ -103,7 +104,7 @@
                 <InArgument x:TypeArguments="x:String">[CheckPath + in_ClientID + ".png"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'ACME-System3.exe ACME'" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="4795a26cf08623ccd7bce8d0d3ea60e6" WaitForReady="INTERACTIVE" />
+            <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'ACME-System3.exe ACME'" sap:VirtualizedContainerService.HintSize="314.4,107.2" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="4795a26cf08623ccd7bce8d0d3ea60e6" WaitForReady="INTERACTIVE" />
           </Sequence>
         </ActivityAction>
       </ui:WindowScope.Body>

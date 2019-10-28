@@ -92,7 +92,7 @@
                   <OutArgument x:TypeArguments="sd:DataRow[]">[out_DataRow]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="sd:DataRow[]">[out_ExtratedDataTable.Select("Type='WI2' AND Status='0'")]</InArgument>
+                  <InArgument x:TypeArguments="sd:DataRow[]">[out_ExtratedDataTable.Select("Type='WI2' AND Status='Open'")]</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>

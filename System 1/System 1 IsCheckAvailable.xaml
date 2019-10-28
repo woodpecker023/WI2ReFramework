@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>969.6,2229.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>969.6,2362.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -65,26 +65,26 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Pre Condition: Browser opened on Check Details&#xA;&#xA;Post Condtion: Check Uploaded" DisplayName="System 1 IsCheckAvailable" sap:VirtualizedContainerService.HintSize="929.6,2149.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Pre Condition: Browser opened on Check Details&#xA;&#xA;Post Condtion: Check Uploaded" DisplayName="System 1 IsCheckAvailable" sap:VirtualizedContainerService.HintSize="929.6,2282.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser System1 IsCheckAvailable - Check Details" sap:VirtualizedContainerService.HintSize="907.2,1964.8" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="63d718223abc7c6a9047f84e6255bb29" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Checks - Check Details' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser System1 IsCheckAvailable - Check Details" sap:VirtualizedContainerService.HintSize="907.2,2097.6" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="63d718223abc7c6a9047f84e6255bb29" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Checks - Check Details' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="892.8,1817.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap:VirtualizedContainerService.HintSize="892.8,1950.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="870.4,1592.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="870.4,1725.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="CheckExists" />
               </Sequence.Variables>
@@ -101,14 +101,14 @@
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                 </ui:ImageFound.Target>
               </ui:ImageFound>
-              <If sap2010:Annotation.AnnotationText="If check exists inside System 1 then download the picture and upload it, if not check if there is check inside System 3. " Condition="[CheckExists]" sap:VirtualizedContainerService.HintSize="848,1320.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap2010:Annotation.AnnotationText="If check exists inside System 1 then download the picture and upload it, if not check if there is check inside System 3. " Condition="[CheckExists]" sap:VirtualizedContainerService.HintSize="848,1453.6" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence DisplayName="Save Image" sap:VirtualizedContainerService.HintSize="336.8,1143.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Save Image" sap:VirtualizedContainerService.HintSize="336.8,1276" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="ui:Image" Name="Check" />
                     </Sequence.Variables>
@@ -137,6 +137,7 @@
                         <InArgument x:TypeArguments="x:String" xml:space="preserve">[Directory.GetCurrentDirectory  + "\Data\Checks\" + in_ClientID]</InArgument>
                       </Assign.Value>
                     </Assign>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[out_CheckLocation + &quot;.png&quot;]" />
                     <ui:SaveImage DisplayName="Save Image" FileName="[out_CheckLocation + &quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Check]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
